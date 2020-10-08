@@ -130,12 +130,12 @@ class MiActivity : BaseActivity(), BaseAdapter.Listener<BluetoothDevice> {
     private fun updateDimensions() {
         when (preferences.units) {
             1 -> {
-                til_distance.suffixText = "meters"
-                til_pace.suffixText = "Km/h"
+                tv_s.text = "meters"
+                tv_v.text = "Km/h"
             }
             else -> {
-                til_distance.suffixText = "yards"
-                til_pace.suffixText = "Mi/h"
+                tv_s.text = "yards"
+                tv_v.text = "Mi/h"
             }
         }
     }

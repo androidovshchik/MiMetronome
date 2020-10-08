@@ -141,59 +141,82 @@
 
         </FrameLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_distance"
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="12dp"
-            app:boxBackgroundColor="@color/colorAccent"
-            app:layout_constraintTop_toBottomOf="@+id/fl_devices"
-            tools:suffixText="yards">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_distance"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Marker Distance"
-                android:imeOptions="actionNext"
-                android:inputType="numberDecimal"
-                android:maxLines="1"
-                android:paddingBottom="16dp"
-                android:textColor="@android:color/black"
-                android:textSize="16sp" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_pace"
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/tv_distance"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            app:boxBackgroundColor="@color/colorAccent"
-            app:layout_constraintTop_toBottomOf="@+id/til_distance"
-            tools:suffixText="Mi/h">
+            android:text="Marker Distance"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fl_devices" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_pace"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Pace"
-                android:imeOptions="actionDone"
-                android:inputType="numberDecimal"
-                android:maxLines="1"
-                android:textColor="@android:color/black"
-                android:textSize="16sp" />
+        <EditText
+            android:id="@+id/et_distance"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background"
+            android:imeOptions="actionNext"
+            android:inputType="numberDecimal"
+            android:maxLines="1"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/rg_vibration"
+            app:layout_constraintTop_toBottomOf="@+id/fl_devices" />
 
-        </com.google.android.material.textfield.TextInputLayout>
+        <TextView
+            android:id="@+id/tv_s"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fl_devices"
+            tools:text="yards" />
+
+        <TextView
+            android:id="@+id/tv_pace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Pace"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_distance" />
+
+        <EditText
+            android:id="@+id/et_pace"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background"
+            android:imeOptions="actionNext"
+            android:inputType="numberDecimal"
+            android:maxLines="1"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/rg_vibration"
+            app:layout_constraintTop_toBottomOf="@+id/et_distance" />
+
+        <TextView
+            android:id="@+id/tv_v"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_distance"
+            tools:text="Mi/h" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_go"
-            android:layout_width="match_parent"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
             android:paddingStart="32dp"
             android:paddingTop="12dp"
             android:paddingEnd="32dp"
@@ -202,8 +225,11 @@
             android:textAllCaps="false"
             android:textColor="@android:color/black"
             android:textSize="20sp"
-            app:backgroundTint="@color/colorAccent"
-            app:layout_constraintTop_toBottomOf="@+id/til_pace" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_pace"
+            app:strokeColor="@android:color/darker_gray"
+            app:strokeWidth="1dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
