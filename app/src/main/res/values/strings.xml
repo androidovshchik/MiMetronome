@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Benny\'s Pacer</string>
+    <string name="crash_subject">Crash report</string>
+    <string name="crash_title">An error has occurred</string>
+    <string name="crash_text">Please send a letter to the developer to solve the problem</string>
+    <string name="crash_comment">Write a few words about what happened</string>
 </resources>
