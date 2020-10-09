@@ -112,9 +112,9 @@ class MiService : Service(), CoroutineScope {
         )
         Timber.d("Starting foreground service")
         val duration = when (preferences.vibration) {
-            1 -> 500
-            2 -> 1000
-            else -> 1500
+            1 -> 250
+            2 -> 500
+            else -> 750
         }
         val k = when (preferences.units) {
             1 -> 3.6f
