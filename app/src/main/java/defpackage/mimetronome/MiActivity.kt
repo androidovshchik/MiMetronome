@@ -18,6 +18,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.jetbrains.anko.activityManager
 import org.jetbrains.anko.bluetoothManager
+import org.jetbrains.anko.browse
 import org.jetbrains.anko.newTask
 import org.jetbrains.anko.sdk21.listeners.textChangedListener
 
@@ -59,11 +60,12 @@ class MiActivity : BaseActivity(), BaseAdapter.Listener<BluetoothDevice> {
         }
         rv_devices.adapter = adapter
         tv_help.setOnClickListener {
-            val intent = packageManager.getLaunchIntentForPackage("com.xiaomi.hm.health")
+            val miPackage = "com.xiaomi.hm.health"
+            val intent = packageManager.getLaunchIntentForPackage(miPackage)
             if (intent != null) {
                 startActivity(intent.newTask())
             } else {
-                showMessage("MiFit app is not installed")
+                browse("https://play.google.com/store/apps/details?id=$miPackage", true)
             }
         }
         btn_go.setOnClickListener {
