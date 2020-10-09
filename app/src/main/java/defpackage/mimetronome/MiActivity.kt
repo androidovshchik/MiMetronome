@@ -123,8 +123,10 @@ class MiActivity : BaseActivity(), BaseAdapter.Listener<BluetoothDevice> {
     }
 
     private fun stopService() {
+        miMac = null
         MiService.stop(applicationContext)
         btn_go.text = "Start"
+        adapter.notifyDataSetChanged()
     }
 
     private fun updateDimensions() {
