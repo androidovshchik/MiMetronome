@@ -87,6 +87,7 @@ class MiActivity : BaseActivity(), BaseAdapter.Listener<BluetoothDevice> {
                     adapter.items.addAll(devices)
                     tv_help.isVisible = false
                 } else {
+                    miMac = null
                     tv_help.isVisible = true
                 }
                 adapter.notifyDataSetChanged()
@@ -123,10 +124,8 @@ class MiActivity : BaseActivity(), BaseAdapter.Listener<BluetoothDevice> {
     }
 
     private fun stopService() {
-        miMac = null
         MiService.stop(applicationContext)
         btn_go.text = "Start"
-        adapter.notifyDataSetChanged()
     }
 
     private fun updateDimensions() {
